@@ -102,7 +102,7 @@ function drawImage() {
       canvas.width = imgCanvas.width;
       canvas.height = imgCanvas.height;
       const ctx = canvas.getContext("2d"); 
-      let filterCanvas = `blur(${document.getElementsByName('blur')[0].value}px)  
+      let filterCanvas = `blur(${document.getElementsByName('blur')[0].value * 3}px)  
       invert(${document.getElementsByName('invert')[0].value}%) 
       sepia(${document.getElementsByName('sepia')[0].value}%)
       saturate(${document.getElementsByName('saturate')[0].value}%) 
@@ -139,7 +139,7 @@ filtersContainer.addEventListener ('input', function(e) {
   e.target.parentElement.children[1].value = e.target.value;
   
   
-  let filterCanvas = `blur(${document.getElementsByName('blur')[0].value}px)  
+  let filterCanvas = `blur(${document.getElementsByName('blur')[0].value * 3}px)  
   invert(${document.getElementsByName('invert')[0].value}%) 
   sepia(${document.getElementsByName('sepia')[0].value}%)
   saturate(${document.getElementsByName('saturate')[0].value}%) 
