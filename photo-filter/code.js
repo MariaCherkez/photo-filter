@@ -58,7 +58,9 @@ inputFile.addEventListener('change', function(e) {
   const file = e.target.files[0];
   const reader = new FileReader();
   reader.onload = () => { 
-    img.src = reader.result; 
+    img.src = reader.result;
+    imgCanvas.src = reader.result; 
+    canvas.getContext("2d").drawImage(imgCanvas, 0, 0); 
   }
   reader.readAsDataURL(file);
 });
