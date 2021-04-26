@@ -318,9 +318,9 @@ img {
   }
 }
 
-  canvas {
-    border:1px solid #000;
-    width: 500px;
-    height: 500px;
-	display: none;
-  }
+canvas {
+  border:1px solid #000;
+  width: 500px;
+  height: 500px;
+  display: none;
+}
