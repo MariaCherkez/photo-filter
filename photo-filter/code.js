@@ -14,15 +14,15 @@ const imgCanvas = new Image();
 document.addEventListener('DOMContentLoaded', loadImg);
 
 fullScreenButton.addEventListener ('click', event => {
-	if (!document.fullscreenElement) {		
-		document.documentElement.requestFullscreen();
-		event.target.classList.remove('openfullscreen');
-		event.target.classList.add('exitfullscreen'); 
-	} else {
-		document.exitFullscreen();
-		event.target.classList.remove('exitfullscreen');
-		event.target.classList.add('openfullscreen');		
-	}
+  if (!document.fullscreenElement) {		
+    document.documentElement.requestFullscreen();
+    event.target.classList.remove('openfullscreen');
+    event.target.classList.add('exitfullscreen'); 
+  } else {
+    document.exitFullscreen();
+    event.target.classList.remove('exitfullscreen');
+    event.target.classList.add('openfullscreen');		
+  }
 });
 
 buttonNext.addEventListener('click', loadImg);
@@ -85,9 +85,9 @@ else if (hours >= 18 && hours <= 23 ) {
 else {	
   time = 'night';
 }
-let number = '${count}';
+let number = `${count}`;
 if (count < 10)
-	number = `0${count}`;
+  number = `0${count}`;
  	
 img.src = `${link}${time}/${number}.jpg`;
 drawImage();
