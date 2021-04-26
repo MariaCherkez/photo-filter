@@ -102,6 +102,13 @@ function drawImage() {
       canvas.width = imgCanvas.width;
       canvas.height = imgCanvas.height;
       const ctx = canvas.getContext("2d");
+      let filterCanvas = `blur(${document.getElementsByName('blur')[0].value}px)  
+      invert(${document.getElementsByName('invert')[0].value}%) 
+      sepia(${document.getElementsByName('sepia')[0].value}%)
+      saturate(${document.getElementsByName('saturate')[0].value}%) 
+      hue-rotate(${document.getElementsByName('hue')[0].value}deg)`;
+ 
+      ctx.filter = filterCanvas;  
       ctx.drawImage(imgCanvas, 0, 0); 
     };  
 }
