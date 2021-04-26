@@ -180,7 +180,7 @@ img {
 }
 .fullscreen {
   position: fixed;
-  top: 120px;
+  top: 15px;
   right: 40px;
   width: 40px;
   height: 40px;
@@ -317,3 +317,10 @@ img {
     margin: 3px;
   }
 }
+
+  canvas {
+    border:1px solid #000;
+    width: 500px;
+    height: 500px;
+	display: none;
+  }
