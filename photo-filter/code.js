@@ -14,15 +14,15 @@ const imgCanvas = new Image();
 document.addEventListener('DOMContentLoaded', loadImg);
 
 fullScreenButton.addEventListener ('click', event => {
-  if (!document.fullscreenElement) {		
-    document.documentElement.requestFullscreen();
-    event.target.classList.remove('openfullscreen');
-    event.target.classList.add('exitfullscreen'); 
-  } else {
-    document.exitFullscreen();
-    event.target.classList.remove('exitfullscreen');
-    event.target.classList.add('openfullscreen');		
-  }
+	if (!document.fullscreenElement) {		
+		document.documentElement.requestFullscreen();
+		event.target.classList.remove('openfullscreen');
+		event.target.classList.add('exitfullscreen'); 
+	} else {
+		document.exitFullscreen();
+		event.target.classList.remove('exitfullscreen');
+		event.target.classList.add('openfullscreen');		
+	}
 });
 
 buttonNext.addEventListener('click', loadImg);
@@ -58,9 +58,9 @@ inputFile.addEventListener('change', function(e) {
   const file = e.target.files[0];
   const reader = new FileReader();
   reader.onload = () => { 
-    img.src = reader.result;
-    imgCanvas.src = reader.result; 
-    canvas.getContext("2d").drawImage(imgCanvas, 0, 0); 
+    img.src = reader.result; 
+	imgCanvas.src = reader.result; 
+	canvas.getContext("2d").drawImage(imgCanvas, 0, 0); 
   }
   reader.readAsDataURL(file);
 });
@@ -87,9 +87,9 @@ else if (hours >= 18 && hours <= 23 ) {
 else {	
   time = 'night';
 }
-let number = `${count}`;
+let number = '${count}';
 if (count < 10)
-  number = `0${count}`;
+	number = `0${count}`;
  	
 img.src = `${link}${time}/${number}.jpg`;
 drawImage();
@@ -101,7 +101,7 @@ function drawImage() {
     imgCanvas.onload = function() {
       canvas.width = imgCanvas.width;
       canvas.height = imgCanvas.height;
-      const ctx = canvas.getContext("2d");
+      const ctx = canvas.getContext("2d"); 
       let filterCanvas = `blur(${document.getElementsByName('blur')[0].value}px)  
       invert(${document.getElementsByName('invert')[0].value}%) 
       sepia(${document.getElementsByName('sepia')[0].value}%)
@@ -109,8 +109,8 @@ function drawImage() {
       hue-rotate(${document.getElementsByName('hue')[0].value}deg)`;
  
       ctx.filter = filterCanvas;  
-      ctx.drawImage(imgCanvas, 0, 0); 
-    };  
+      ctx.drawImage(imgCanvas, 0, 0); 	  
+    };  	
 }
 
 filtersContainer.addEventListener ('input', function(e) {
